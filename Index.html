@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth's Personal Site</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            background-color: #000000;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #333;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ff3333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff3333;
+        }
+
+        /* --- HERO SECTION (Welcome with Background) --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            /* BACKGROUND IMAGE ADDED HERE */
+            background-image: url('background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            /* Dark overlay so text is easy to read over the image */
+            box-shadow: inset 0 0 0 2000px rgba(10, 10, 10, 0.75); 
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ff3333;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #ff3333;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* --- CONTENT SECTIONS --- */
+        section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid #222;
+        }
+
+        h2 {
+            color: #ff3333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff3333;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-top: 20px;
+        }
+
+        /* --- PROFILE IMAGE STYLE --- */
+        .profile-pic {
+            display: block;
+            margin: 0 auto 20px auto; /* Centers the image */
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes it a circle */
+            border: 3px solid #ff3333;
+            box-shadow: 0 0 15px #ff3333;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #000;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <a href="#" class="logo">Elizabeth's Site</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#profile">Profile</a>
+            <a href="#interested">Interested</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Welcome) -->
+    <div class="hero">
+        <h1>Welcome to my <span>website</span></h1>
+        <p>Hello, I'm Elizabeth!</p>
+        <a href="#about" class="btn">Learn More</a>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About</h2>
+        <p class="section-text">
+            This is my first website. I built it entirely from scratch using HTML and CSS.
+        </p>
+    </section>
+
+    <!-- PROFILE SECTION -->
+    <section id="profile">
+        <h2>Profile</h2>
+        <!-- ANIME IMAGE ADDED HERE -->
+        <img src="anime.jpg" alt="Anime Character" class="profile-pic">
+        
+        <p class="section-text" style="text-align: center;">
+            I'm Elizabeth 🙂<br><br>
+            I'm currently pursuing my higher education. I'm 17 years old, and I live in India.
+        </p>
+    </section>
+
+    <!-- INTERESTED SECTION -->
+    <section id="interested">
+        <h2>Interested</h2>
+        <p class="section-text">
+            I love traveling, eating food, and hanging out with my friends.
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Elizabeth. Built with HTML and CSS.
+    </footer>
+
+    <!-- SMOOTH SCROLLING SCRIPT -->
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+  </html>
